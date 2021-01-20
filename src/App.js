@@ -1,5 +1,9 @@
-import './sass/App.scss';
-import './sass/Gradient_transform.scss';
+import './sass/Variables.scss';
+import './sass/AppMain.scss';
+import './sass/GradientTransform.scss';
+import './sass/MusicControls.scss';
+import './sass/Nav.scss';
+
 import Nav from './components/Nav';
 import Main from './components/Main';
 import MusicControls from './components/MusicControls';

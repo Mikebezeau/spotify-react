@@ -1,0 +1,12 @@
+@import "./Variables.scss";
+
+.musicControls {
+  z-index: 100;
+  background: $greyLighter;
+  text-align: center;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

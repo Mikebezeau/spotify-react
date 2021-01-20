@@ -1,0 +1,47 @@
+@import "./Variables.scss";
+
+.navBar {
+  width: $navBar-width;
+  padding: $navBar-padding;
+  height: calc(100% - 18px);
+  background: $greyDark;
+  display: flex;
+  flex-direction: column;
+  .logo {
+    padding: 1.2rem 0.8rem;
+    svg {
+      max-width: 130px;
+      path {
+        fill: white;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      color: $greyText;
+      list-style-type: none;
+      border-radius: 5px;
+      padding: 0.55rem;
+      cursor: pointer;
+      transition: all 0.3% ease-in-out;
+      &.active {
+        background: $greyLighter;
+        color: white;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .cookies {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: $greyLighter;
+    text-align: center;
+    & span {
+      cursor: pointer;
+    }
+  }
+}
