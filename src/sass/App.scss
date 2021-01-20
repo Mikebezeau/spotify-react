@@ -1,0 +1,140 @@
+$greyDark: #040404;
+$greyLight: #131313;
+$greyLighter: #282828;
+$greyText: #b3b3b3;
+$greyTrans: rgba(50, 50, 50, 0.4);
+$greyHoverTrans: rgba(90, 90, 90, 0.4);
+
+.outerWrap {
+  background: grey;
+  height: 100vh;
+  min-height: 100%;
+}
+
+.App {
+  display: flex;
+  height: calc(100vh - 90px);
+  background: $greyLight;
+}
+
+$navBar-width: 215px;
+$navBar-padding: 9px;
+
+.navBar {
+  width: $navBar-width;
+  padding: $navBar-padding;
+  height: calc(100% - 18px);
+  background: $greyDark;
+  display: flex;
+  flex-direction: column;
+  .logo {
+    padding: 1.2rem 0.8rem;
+    svg {
+      max-width: 130px;
+      path {
+        fill: white;
+      }
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      color: $greyText;
+      list-style-type: none;
+      border-radius: 5px;
+      padding: 0.55rem;
+      cursor: pointer;
+      transition: all 0.3% ease-in-out;
+      &.active {
+        background: $greyLighter;
+        color: white;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .cookies {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: $greyLighter;
+    text-align: center;
+    & span {
+      cursor: pointer;
+    }
+  }
+}
+
+.main {
+  width: calc(100% - #{$navBar-width});
+  padding: 20px;
+  background-image: linear-gradient(
+    to top,
+    rgba(94, 0, 0, 0),
+    rgba(94, 0, 0, 0),
+    rgba(94, 0, 0, 1)
+  );
+  .mainContent {
+    color: white;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .card {
+    width: 180px;
+    padding: 15px;
+    border-radius: 5px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.gradient {
+  position: relative;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(90, 90, 90, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(90, 90, 90, 0.2),
+    rgba(90, 90, 90, 0.2)
+  );
+  z-index: 1;
+}
+
+.gradient::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2)
+  );
+  z-index: -1;
+  transition: opacity 0.25s linear;
+  opacity: 0;
+}
+
+.gradient:hover::before {
+  opacity: 1;
+}
+
+.musicControls {
+  z-index: 100;
+  background: $greyLighter;
+  text-align: center;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
