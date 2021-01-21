@@ -1,7 +1,5 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import '../sass/GradientTransform.scss';
-import '../sass/Slider.scss';
 import { Slider } from '../utility/SliderBase';
 
 const GenreSlider = props => {
@@ -15,7 +13,7 @@ const GenreSlider = props => {
                             <Card key={index} className="genreCard gradient" onClick={() => props.click(item.id) } >
                                 <Card.Img variant="top" src={item.icons[0].url} />
                                 <Card.Body>
-                                    <Card.Title>{item.name}</Card.Title>
+                                    <Card.Text>{item.name}</Card.Text>
                                 </Card.Body>
                             </Card>
                         );
@@ -44,9 +42,6 @@ const PlaylistSlider = props => {
                         return (
                             <Card key={index} className="playlistCard gradient" onClick={() => props.click(item.id) } >
                                 <Card.Img variant="top" src={item.images[0].url} />
-                                <Card.Body>
-                                    <Card.Title>{item.name}</Card.Title>
-                                </Card.Body>
                             </Card>
                         );
                     }

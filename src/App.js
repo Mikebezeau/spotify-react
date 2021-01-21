@@ -6,12 +6,16 @@ import Nav from './components/Nav';
 import Main from './components/Main';
 import MusicControls from './components/MusicControls';
 
+import './sass/GradientTransform.scss';
+
 function App() {
   
     const spotify = Credentials();
     const [token, setToken] = useState('');
     const [genres, setGenres] = useState({selectedGenre:'', listOfGenresFromAPI: []});
     const [playlists, setPlaylists] = useState({selectedPlaylist:'', listOfPlaylistsFromAPI: []});
+    const [tracks, setTracks] = useState({selectedTrack:'', listOfTracksFromAPI: []});
+    const [trackDetail, setTrackDetail] = useState(null);
     
     useEffect(() => {
 
@@ -70,16 +74,34 @@ function App() {
         selectedPlaylists: val,
         listOfPlaylistsFromAPI: playlists.listOfPlaylistsFromAPI
       });
+      axios(`https://api.spotify.com/v1/playlists/${val}/tracks?limit=10`, {
+        method: 'GET',
+        headers: {
+          'Authorization' : 'Bearer ' + token
+        }
+      })
+      .then(tracksResponse => {
+        console.log('setTracks');
+        setTracks({
+          selectedTrack: tracks.selectedTrack,
+          listOfTracksFromAPI: tracksResponse.data.items
+        })
+      });
     }
 
+    const listboxClicked = val => {
+      const currentTracks = [...tracks.listOfTracksFromAPI];
+      const trackInfo = currentTracks.filter(t => t.track.id === val);
+      setTrackDetail(trackInfo[0].track);
+    }
 
   return (
-    <div className="outerWQrap">
+    <div className="outerWrap">
       <div className="App">
         <Nav/>
         <Main genres={genres} playlists={playlists} genreChanged={genreChanged} playlistChanged={playlistChanged}/>
       </div>
-      <MusicControls/>
+      <MusicControls tracks={tracks} trackDetail={trackDetail} clicked={listboxClicked}/>
     </div>
   );
 }

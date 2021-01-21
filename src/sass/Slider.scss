@@ -1,42 +1,3 @@
-.card {
-  display: flex;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.card-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* GenreSlider */
-.genreCard {
-  min-width: 200px;
-  img {
-    width: 70px;
-  }
-  .card-body {
-    padding: 0 15px;
-  }
-}
-
-/* PlaylistSlider */
-.playlistCard {
-  flex-direction: column;
-  min-width: 180px;
-  min-height: 250px;
-  img {
-    width: 100%;
-  }
-  .card-body {
-    margin: auto;
-    text-align: center;
-  }
-}
-
 /* SliderBase */
 .parent {
   width: 90%;
@@ -52,24 +13,25 @@
   margin: 0rem 2rem;
   padding: 3px;
   scroll-behavior: smooth;
+  .btn {
+    position: absolute;
+    box-shadow: 0 0 6.1px 0.9px grey;
+    padding: 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: grey;
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+  }
 }
 .slider-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
 }
-.btn {
-  position: absolute;
-  box-shadow: 0 0 6.1px 0.9px grey;
-  padding: 5px;
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background: grey;
-  text-align: center;
-  color: white;
-  border-radius: 50%;
-}
+
 .prev {
   left: 234px;
 }

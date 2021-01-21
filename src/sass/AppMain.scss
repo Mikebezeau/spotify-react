@@ -1,8 +1,9 @@
 @import "./Variables.scss";
+@import "~bootstrap/scss/bootstrap";
 
 .App {
   display: flex;
-  height: calc(100vh - 90px);
+  height: 420px;
   background: $greyLight;
 }
 

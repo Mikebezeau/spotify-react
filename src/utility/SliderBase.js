@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 
 class Slider extends React.Component {
       
@@ -48,7 +49,7 @@ class Slider extends React.Component {
         this.checkButtons(offsetWidthValue, scrollWidthValue);
        }}
        >
-       {"<"}
+       <BsFillCaretLeftFill/>
       </div>
       <div
        className={`btn next ${this.state.nextDisable ? "disable" : ""}`}
@@ -58,7 +59,7 @@ class Slider extends React.Component {
         this.checkButtons(offsetWidthValue, scrollWidthValue);
        }}
        >
-       {">"}
+       <BsFillCaretRightFill/>
       </div>
      </div>
     );

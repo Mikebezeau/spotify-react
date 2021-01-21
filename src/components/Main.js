@@ -3,22 +3,16 @@ import ReactDOM from 'react-dom';
 import { GenreSlider, PlaylistSlider } from './Slider';
 
 import '../sass/AppMain.scss';
+import '../sass/Slider.scss';
+import '../sass/Card.scss';
 
 const Main = props => {
-
-    const genreDropDownChanged = e => {
-        props.genreChanged(e.target.value);
-    }
 
     const genreCardClicked = val => {
         //console.log(val);
         props.genreChanged(val);
     }
 
-    const playlistDropDownChanged = e => {
-        props.playlistChanged(e.target.value);
-    }
-   
     const playlistCardClicked = val => {
         //console.log(val);
         props.playlistChanged(val);
@@ -44,25 +38,6 @@ const Main = props => {
     return (
     <div className="main">
         <div className="upper">
-            <form onSubmit={() => {}}>
-                <select value={props.genres.selectedValue} onChange={genreDropDownChanged}>
-                { 
-                    props.genres.listOfGenresFromAPI.map(
-                        (item,index) => 
-                        <option key={index} value={item.id}>{item.name}</option>
-                    )
-                }
-                </select>
-                
-                <select value={props.playlists.selectedValue} onChange={playlistDropDownChanged}>
-                { 
-                    props.playlists.listOfPlaylistsFromAPI.map(
-                        (item,index) => 
-                        <option key={index} value={item.id}>{item.name}</option>
-                    )
-                }
-                </select>
-            </form>
         </div>
 
         <div className="mainContent">

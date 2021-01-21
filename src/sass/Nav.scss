@@ -3,7 +3,7 @@
 .navBar {
   width: $navBar-width;
   padding: $navBar-padding;
-  height: calc(100% - 18px);
+  height: 100%;
   background: $greyDark;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,9 @@
       &:hover {
         color: white;
       }
+    }
+    svg {
+      margin-right: 15px;
     }
   }
   .cookies {

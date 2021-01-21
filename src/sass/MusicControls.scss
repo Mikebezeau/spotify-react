@@ -3,10 +3,24 @@
 .musicControls {
   z-index: 100;
   background: $greyLighter;
-  text-align: center;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: calc(100% - 420px);
   color: white;
+  overflow-y: scroll;
+}
+
+.trackInfo {
+  width: 60%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.trackInfo {
+  background-color: transparent;
+
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
 }
