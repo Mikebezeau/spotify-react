@@ -1,19 +1,24 @@
 @import "./Variables.scss";
 
+#musicControls {
+  display: none;
+}
+
 .musicControls {
   z-index: 100;
   background: $greyLighter;
   height: calc(100% - 420px);
   color: white;
-  overflow-y: scroll;
+  padding: 10px;
 }
 
 .trackInfo {
-  width: 60%;
-  margin: 10px auto;
+  margin: 20px;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  width: auto;
+  display: inline-block;
 }
 
 .trackInfo {

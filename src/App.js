@@ -8,6 +8,8 @@ import MusicControls from './components/MusicControls';
 
 import './sass/GradientTransform.scss';
 
+import $ from 'jquery';
+
 function App() {
   
     const spotify = Credentials();
@@ -86,6 +88,11 @@ function App() {
           selectedTrack: tracks.selectedTrack,
           listOfTracksFromAPI: tracksResponse.data.items
         })
+        //fadeIn track list if not already faded in
+        if( $('#musicControls').css('display') == 'none' )
+        {
+          $('#musicControls').fadeIn();
+        }
       });
     }
 
